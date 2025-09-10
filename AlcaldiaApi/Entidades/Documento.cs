@@ -10,7 +10,10 @@ namespace AlcaldiaApi.Entidades
         public int Estado { get; set; }
 
         public int TipoDocumentoId { get; set; }
-        public TipoDocumento TipoDocumento{ get; set; } = null!;
+        public TipoDocumento TipoDocumento { get; set; } = null!;
+        public int MunicipioId { get; set; }
+        public Municipio Municipio { get; set; } = null!;
+
 
     }
 }
