@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MaI0FxPk0bQ=",
+  "dgSpecHash": "cmRo0jEamvI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elias\\OneDrive\\Escritorio\\AlcaldiaAPI\\AlcaldiaApi\\AlcaldiaApi.csproj",
+  "projectFilePath": "C:\\Users\\Elias\\OneDrive\\Escritorio\\API\\AlcaldiaApi\\AlcaldiaApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elias\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Elias\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.0\\microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
