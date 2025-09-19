@@ -26,6 +26,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICargoRepository, CargoRepository>();
 builder.Services.AddScoped<ICargoService, CargoService>();
 
+builder.Services.AddScoped<IMunicipioRepository, MunicipioRepository>();
+builder.Services.AddScoped<IMunicipioService, MunicipioService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

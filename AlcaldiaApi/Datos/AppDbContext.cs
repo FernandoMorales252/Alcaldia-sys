@@ -8,6 +8,7 @@ namespace AlcaldiaApi.Datos
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public DbSet<Cargo> Cargos { get; set; }
+        public DbSet<Municipio> Municipios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -15,6 +16,7 @@ namespace AlcaldiaApi.Datos
 
             
             modelBuilder.Entity<Cargo>().ToTable("Cargo");
+            modelBuilder.Entity<Municipio>().ToTable("Municipio");
         }
     }
 }
