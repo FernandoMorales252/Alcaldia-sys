@@ -16,12 +16,14 @@ namespace AlcaldiaApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
            => Ok(await _service.GetAllAsync());
+
         [HttpGet("{Id_Municipio:int}")]
         public async Task<IActionResult> GetById(int Id_Municipio)
         {
             var item = await _service.GetByIdAsync(Id_Municipio);
             return item is null ? NotFound() : Ok(item);
         }
+
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] MunicipioCrearDTo dto)
         {
