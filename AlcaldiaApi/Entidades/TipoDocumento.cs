@@ -1,8 +1,15 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace AlcaldiaApi.Entidades
 {
+    [ Table ("tipodocumento")]
     public class TipoDocumento
     {
-        public int Id_tipo_documento { get; set; }
-        public string Nombre_tipo { get; set; } = "";
+        [Key]
+        [Column("id_tipo_documento")]
+        public int Id_tipo { get; set; }
+        [Column("nombre_tipo")]
+        public string Nombre { get; set; } = "";
     }
 }

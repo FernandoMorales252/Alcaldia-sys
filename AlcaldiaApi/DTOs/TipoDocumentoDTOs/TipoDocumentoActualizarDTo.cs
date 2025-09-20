@@ -2,6 +2,6 @@ namespace AlcaldiaApi.DtOs.TipoDocumentoDTOs
 {
     public class TipoDocumentoActualizarDTO
     {
-        public string Nombre_tipo { get; set; } = "";
+        public string Nombre { get; set; } = "";
     }
 }
