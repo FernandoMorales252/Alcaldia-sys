@@ -29,6 +29,9 @@ builder.Services.AddScoped<ICargoService, CargoService>();
 builder.Services.AddScoped<IMunicipioRepository, MunicipioRepository>();
 builder.Services.AddScoped<IMunicipioService, MunicipioService>();
 
+builder.Services.AddScoped<ITipoDocRepository, TipoDocRepository>();
+builder.Services.AddScoped<ITipoDocService, TipoDocService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
