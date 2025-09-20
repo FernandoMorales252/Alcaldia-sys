@@ -10,6 +10,7 @@ namespace AlcaldiaApi.Servicios
 
         public TipoDocService(ITipoDocRepository repo) => _repo = repo;
 
+        // 1.Servicio para obtener todos los tipos de documento
         public async Task<List<TipoDocumentoRespuestaDTO>> GetAllAsync() =>
             (await _repo.GetAllAsync()).Select(x => new TipoDocumentoRespuestaDTO
             {
@@ -17,6 +18,7 @@ namespace AlcaldiaApi.Servicios
                 Nombre = x.Nombre,
             }).ToList();
 
+        // 2.Servicio para obtener tipos de documento por ID
         public async Task<TipoDocumentoRespuestaDTO?> GetByIdAsync(int id)
         {
             var x = await _repo.GetByIdAsync(id);
@@ -27,6 +29,8 @@ namespace AlcaldiaApi.Servicios
             };
         }
 
+
+        // 3.Servicio para crear un tipo de documento
         public async Task<TipoDocumentoRespuestaDTO> CreateAsync(TipoDocumentoCrearDTO dto)
         {
             var entity = new TipoDocumento { Nombre = dto.Nombre.Trim() };
@@ -34,6 +38,7 @@ namespace AlcaldiaApi.Servicios
             return new TipoDocumentoRespuestaDTO { Id_tipo = saved.Id_tipo, Nombre = saved.Nombre };
         }
 
+        // 4.Servicio para actualizar un tipo de documento
         public async Task<bool> UpdateAsync(int Id_tipo, TipoDocumentoActualizarDTO dto)
         {
             var current = await _repo.GetByIdAsync(Id_tipo);
@@ -42,6 +47,7 @@ namespace AlcaldiaApi.Servicios
             return await _repo.UpdateAsync(current);
         }
 
+        // 5.Servicio para eliminar un tipo de documento por ID
         public Task<bool> DeleteAsync(int Id_tipo) => _repo.DeleteAsync(Id_tipo);
     }
 }
