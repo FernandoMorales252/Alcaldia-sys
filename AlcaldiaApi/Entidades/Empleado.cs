@@ -20,7 +20,7 @@ namespace AlcaldiaApi.Entidades
         public DateTime Fecha_contratacion { get; set; }
 
         [Column("estado")]
-        public int Estado { get; set; }
+        public string Estado { get; set; }
 
         [Column("id_cargo")]
         public int CargoId { get; set; }
