@@ -16,5 +16,7 @@ namespace AlcaldiaApi.Entidades
         [Column("descripcion")]
         public string Descripcion { get; set; } = "";
 
+        public List<Empleado> Empleados { get; set; } = new List<Empleado>();
+
     }
 }
