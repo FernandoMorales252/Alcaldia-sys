@@ -13,6 +13,7 @@ namespace AlcaldiaApi.Datos
         public DbSet<Municipio> Municipios { get; set; }
         public DbSet<TipoDocumento> Tipos { get; set; }
         public DbSet<Documento> Documentos { get; set; }
+        public DbSet<Proyecto> Proyectos { get; set; }
 
         public DbSet<Empleado> Empleados { get; set; }
 
@@ -51,6 +52,11 @@ namespace AlcaldiaApi.Datos
                 .HasOne(e => e.Municipio)
                 .WithMany(m => m.Empleados)
                 .HasForeignKey(e => e.MunicipioId);
+
+            modelBuilder.Entity<Proyecto>()
+             .HasOne(d => d.Municipio) // Un documento tiene un Municipio
+             .WithMany(m => m.Proyectos) // Un Municipio tiene muchos documentos
+             .HasForeignKey(d => d.MunicipioId); // La clave foránea es MunicipioId
         }
     }
 }
