@@ -1,5 +1,4 @@
-﻿
-using AlcaldiaApi.Entidades;
+﻿using AlcaldiaApi.Entidades;
 using Microsoft.EntityFrameworkCore;
 
 namespace AlcaldiaApi.Datos
@@ -14,8 +13,8 @@ namespace AlcaldiaApi.Datos
         public DbSet<TipoDocumento> Tipos { get; set; }
         public DbSet<Documento> Documentos { get; set; }
         public DbSet<Proyecto> Proyectos { get; set; }
-
         public DbSet<Empleado> Empleados { get; set; }
+        public DbSet<Inventario> Inventarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -40,14 +39,11 @@ namespace AlcaldiaApi.Datos
                 .WithMany(m => m.Documentos) // Un Municipio tiene muchos documentos
                 .HasForeignKey(d => d.MunicipioId); // La clave foránea es MunicipioId
 
-
-            // Configuracion de las relaciones para la entidad Empleado
-            //Relacion entre Empleado y Cargo
             modelBuilder.Entity<Empleado>()
                 .HasOne(e => e.Cargo)
                 .WithMany(c => c.Empleados)
                 .HasForeignKey(e => e.CargoId);
-            //Relacion entre Empleado y Municipio
+        
             modelBuilder.Entity<Empleado>()
                 .HasOne(e => e.Municipio)
                 .WithMany(m => m.Empleados)
@@ -57,6 +53,11 @@ namespace AlcaldiaApi.Datos
              .HasOne(d => d.Municipio) // Un documento tiene un Municipio
              .WithMany(m => m.Proyectos) // Un Municipio tiene muchos documentos
              .HasForeignKey(d => d.MunicipioId); // La clave foránea es MunicipioId
+
+            modelBuilder.Entity<Inventario>()
+            .HasOne(i => i.Municipio) // Un documento tiene un Municipio
+            .WithMany(m => m.Inventarios) // Un Municipio tiene muchos documentos
+            .HasForeignKey(i => i.MunicipioId);
         }
     }
 }
