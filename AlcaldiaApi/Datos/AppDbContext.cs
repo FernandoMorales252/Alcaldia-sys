@@ -25,7 +25,6 @@ namespace AlcaldiaApi.Datos
             modelBuilder.Entity<Cargo>().ToTable("Cargo");
             modelBuilder.Entity<Municipio>().ToTable("Municipio");
             modelBuilder.Entity<TipoDocumento>().ToTable("TipoDocumento");
-
             modelBuilder.Entity<Empleado>().ToTable("Empleado");
 
             // Configuracion de las relaciones para la entidad Documento

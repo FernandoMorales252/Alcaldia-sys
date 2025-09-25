@@ -14,12 +14,8 @@ namespace AlcaldiaApi.Entidades
         public string Nombre_Municipio { get; set; } = "";
 
         public ICollection<Documento> Documentos { get; set; } = new List<Documento>();
-        //Si su tabla esta relacionada con esta o otra solamente copiar el public collection pegarlo abajo de la ultima linea y cambiar lo que hay en los <    >
-        //por el nombre de la entidad ejemplo .. public ICollection<Empleado> Empleados { get; set; } = new List<Empleado>();
-
         public ICollection<Empleado> Empleados { get; set; } = new List<Empleado>();
         public ICollection<Proyecto> Proyectos { get; set; } = new List<Proyecto>();
-        public ICollection<Municipio> Municipios { get; set; } = new List<Municipio>();
         public ICollection<Inventario> Inventarios { get; set; } = new List<Inventario>();
 
     }
