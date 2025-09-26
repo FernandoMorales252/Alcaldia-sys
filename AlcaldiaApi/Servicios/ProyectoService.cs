@@ -18,7 +18,7 @@ namespace AlcaldiaApi.Servicios
                 Fecha_Fin = x.Fecha_fin,
                 Presupuesto = x.Presupuesto,
                 Estado = x.Estado,
-                Id_Municipio = x.MunicipioId,
+                MunicipioId = x.MunicipioId,
             }).ToList();
         public async Task<ProyectoRespuestaDTo?> GetByIdAsync(int id)
         {
@@ -32,14 +32,14 @@ namespace AlcaldiaApi.Servicios
                 Fecha_Fin = x.Fecha_inicio,
                 Presupuesto = x.Presupuesto,
                 Estado = x.Estado,
-                Id_Municipio = x.MunicipioId,
+                MunicipioId = x.MunicipioId,
             };
         }
         public async Task<ProyectoRespuestaDTo> CreateAsync(ProyectoCrearDTo dto)
         {
-            var entity = new Proyecto { Nombre = dto.Nombre.Trim(), Descripcion = dto.Descripcion.Trim(), Fecha_inicio = dto.Fecha_Inicio, Fecha_fin = dto.Fecha_Fin, Presupuesto = dto.Presupuesto, Estado = dto.Estado.Trim(), MunicipioId = dto.Id_Municipio };
+            var entity = new Proyecto { Nombre = dto.Nombre.Trim(), Descripcion = dto.Descripcion.Trim(), Fecha_inicio = dto.Fecha_Inicio, Fecha_fin = dto.Fecha_Fin, Presupuesto = dto.Presupuesto, Estado = dto.Estado.Trim(), MunicipioId = dto.MunicipioId };
             var saved = await _repo.AddAsync(entity);
-            return new ProyectoRespuestaDTo { Id_Proyecto = saved.Id_proyecto, Nombre = saved.Nombre, Descripcion = saved.Descripcion, Fecha_Inicio = saved.Fecha_inicio, Fecha_Fin = saved.Fecha_fin, Presupuesto = saved.Presupuesto, Estado = saved.Estado, Id_Municipio = saved.MunicipioId };
+            return new ProyectoRespuestaDTo { Id_Proyecto = saved.Id_proyecto, Nombre = saved.Nombre, Descripcion = saved.Descripcion, Fecha_Inicio = saved.Fecha_inicio, Fecha_Fin = saved.Fecha_fin, Presupuesto = saved.Presupuesto, Estado = saved.Estado, MunicipioId = saved.MunicipioId };
         }
 
         public async Task<bool> UpdateAsync(int Id_Proyecto, ProyectoActualizarDTo dto)
