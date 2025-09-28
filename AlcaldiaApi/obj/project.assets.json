@@ -1512,23 +1512,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Elias\\.nuget\\packages\\": {},
+    "C:\\Users\\MINEDUCYT\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Elias\\OneDrive\\Escritorio\\api\\AlcaldiaApi\\AlcaldiaApi.csproj",
+      "projectUniqueName": "C:\\Users\\MINEDUCYT\\Desktop\\AlcaldiaBack\\AlcaldiaApi\\AlcaldiaApi.csproj",
       "projectName": "AlcaldiaApi",
-      "projectPath": "C:\\Users\\Elias\\OneDrive\\Escritorio\\api\\AlcaldiaApi\\AlcaldiaApi.csproj",
-      "packagesPath": "C:\\Users\\Elias\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Elias\\OneDrive\\Escritorio\\api\\AlcaldiaApi\\obj\\",
+      "projectPath": "C:\\Users\\MINEDUCYT\\Desktop\\AlcaldiaBack\\AlcaldiaApi\\AlcaldiaApi.csproj",
+      "packagesPath": "C:\\Users\\MINEDUCYT\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\MINEDUCYT\\Desktop\\AlcaldiaBack\\AlcaldiaApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Elias\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MINEDUCYT\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1605,7 +1605,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
