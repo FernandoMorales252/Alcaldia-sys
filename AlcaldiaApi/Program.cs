@@ -32,6 +32,19 @@ builder.Services.AddScoped<IMunicipioService, MunicipioService>();
 builder.Services.AddScoped<ITipoDocRepository, TipoDocRepository>();
 builder.Services.AddScoped<ITipoDocService, TipoDocService>();
 
+builder.Services.AddScoped<IDocumentoRepository, DocumentoRepository>();
+builder.Services.AddScoped<IDocumentoService, DocumentoService>();
+
+//Repositorio y Servicio Empleado
+builder.Services.AddScoped<IEmpleadoRepository, EmpleadoRepository>();
+builder.Services.AddScoped<IEmpleadoService, EmpleadoService>();
+
+builder.Services.AddScoped<IProyectoRepository, ProyectoRepository>();
+builder.Services.AddScoped<IProyectoService, ProyectoService>();
+
+builder.Services.AddScoped<IInventarioRepository, InventarioRepository>();
+builder.Services.AddScoped<IInventarioService, InventarioService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

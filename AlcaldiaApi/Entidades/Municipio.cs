@@ -12,5 +12,11 @@ namespace AlcaldiaApi.Entidades
       
         [Column("nombre_municipio")]
         public string Nombre_Municipio { get; set; } = "";
+
+        public ICollection<Documento> Documentos { get; set; } = new List<Documento>();
+        public ICollection<Empleado> Empleados { get; set; } = new List<Empleado>();
+        public ICollection<Proyecto> Proyectos { get; set; } = new List<Proyecto>();
+        public ICollection<Inventario> Inventarios { get; set; } = new List<Inventario>();
+
     }
 }
