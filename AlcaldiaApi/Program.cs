@@ -45,12 +45,6 @@ builder.Services.AddScoped<IProyectoService, ProyectoService>();
 builder.Services.AddScoped<IInventarioRepository, InventarioRepository>();
 builder.Services.AddScoped<IInventarioService, InventarioService>();
 
-builder.Services.AddScoped<IAvisoRepository, AvisoRepository>();
-builder.Services.AddScoped<IAvisoService, AvisoService>();
-
-builder.Services.AddScoped<IQuejaRepository, QuejaRepository>();
-builder.Services.AddScoped<IQuejaService, QuejaService>();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

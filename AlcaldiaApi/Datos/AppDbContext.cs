@@ -15,8 +15,6 @@ namespace AlcaldiaApi.Datos
         public DbSet<Proyecto> Proyectos { get; set; }
         public DbSet<Empleado> Empleados { get; set; }
         public DbSet<Inventario> Inventarios { get; set; }
-        public DbSet<Aviso> Avisos { get; set; }
-        public DbSet<Queja> Quejas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -58,16 +56,6 @@ namespace AlcaldiaApi.Datos
             modelBuilder.Entity<Inventario>()
             .HasOne(i => i.Municipio) // Un documento tiene un Municipio
             .WithMany(m => m.Inventarios) // Un Municipio tiene muchos documentos
-            .HasForeignKey(i => i.MunicipioId);
-
-            modelBuilder.Entity<Aviso>()
-            .HasOne(i => i.Municipio) // Un documento tiene un Municipio
-            .WithMany(m => m.Avisos) // Un Municipio tiene muchos documentos
-            .HasForeignKey(i => i.MunicipioId);
-
-            modelBuilder.Entity<Queja>()
-            .HasOne(i => i.Municipio) // Un documento tiene un Municipio
-            .WithMany(m => m.Quejas) // Un Municipio tiene muchos documentos
             .HasForeignKey(i => i.MunicipioId);
         }
     }
