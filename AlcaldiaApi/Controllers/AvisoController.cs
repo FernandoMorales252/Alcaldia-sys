@@ -40,7 +40,7 @@ namespace AlcaldiaApi.Controllers
         }
 
         // 6.Metodo para actualizar documento
-        [HttpPut("{id:int}")]
+        [HttpPut("{Id_aviso}")]
         public async Task<IActionResult> Update(int Id_aviso, [FromBody] AvisoActualizarDTo dto)
         {
             var ok = await _service.UpdateAsync(Id_aviso, dto);

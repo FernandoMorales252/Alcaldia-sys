@@ -47,6 +47,14 @@ namespace AlcaldiaApi.Servicios
             var current = await _repo.GetByIdAsync(Id_Proyecto);
             if (current == null) return false;
             current.Nombre = dto.Nombre.Trim();
+            current.Descripcion = dto.Descripcion.Trim();
+            current.Fecha_inicio = dto.Fecha_Inicio;
+            current.Fecha_fin = dto.Fecha_Fin;
+            current.Presupuesto = dto.Presupuesto;
+            current.Estado = dto.Estado.Trim();
+            current.MunicipioId = dto.MunicipioId;
+            
+
             return await _repo.UpdateAsync(current);
         }
 

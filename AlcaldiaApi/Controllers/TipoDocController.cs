@@ -40,7 +40,7 @@ namespace AlcaldiaApi.Controllers
         }
 
         // 6.Metodo para actualizar un tipo de documento
-        [HttpPut("{id:int}")]
+        [HttpPut("{Id_tipo}")]
         public async Task<IActionResult> Update(int Id_tipo, [FromBody] TipoDocumentoActualizarDTO dto)
         {
             var ok = await _service.UpdateAsync(Id_tipo, dto);

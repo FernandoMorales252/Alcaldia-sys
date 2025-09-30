@@ -30,12 +30,13 @@ namespace AlcaldiaApi.Controllers
             var created = await _service.CreateAsync(dto);
             return CreatedAtAction(nameof(GetById), new { Id_Proyecto = created.Id_Proyecto }, created);
         }
-        [HttpPut("{id:int}")]
+       [HttpPut("{Id_Proyecto}")]
         public async Task<IActionResult> Update(int Id_Proyecto, [FromBody] ProyectoActualizarDTo dto)
         {
             var ok = await _service.UpdateAsync(Id_Proyecto, dto);
             return ok ? NoContent() : NotFound();
         }
+
         [HttpDelete("{Id_Proyecto:int}")]
         public async Task<IActionResult> Delete(int Id_Proyecto)
         {

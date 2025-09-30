@@ -40,7 +40,7 @@ namespace AlcaldiaApi.Controllers
         }
 
         // 6.Metodo para actualizar documento
-        [HttpPut("{id:int}")]
+        [HttpPut("{Id_queja}")]
         public async Task<IActionResult> Update(int Id_queja, [FromBody] QuejaActualizarDTo dto)
         {
             var ok = await _service.UpdateAsync(Id_queja, dto);

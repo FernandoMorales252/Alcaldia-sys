@@ -12,7 +12,7 @@ namespace AlcaldiaApi.Controllers
         private readonly IEmpleadoService _service; // Inyección de dependencia
 
         //|Constructor
-        public EmpleadoController(IEmpleadoService service){_service = service;  }
+        public EmpleadoController(IEmpleadoService service) { _service = service; }
 
         // GET: api/<EmpleadoController>
         [HttpGet]
@@ -36,7 +36,7 @@ namespace AlcaldiaApi.Controllers
         }
 
         // PUT api/<EmpleadoController>/5
-        [HttpPut("{Id_empleado:int}")]
+        [HttpPut("{Id_empleado}")]
         public async Task<IActionResult> Update(int Id_empleado, [FromBody] EmpleadoActualizarDTo dto)
         {
             var ok = await _service.UpdateAsync(Id_empleado, dto);

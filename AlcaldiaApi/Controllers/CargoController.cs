@@ -31,7 +31,7 @@ namespace AlcaldiaApi.Controllers
             var created = await _service.CreateAsync(dto);
             return CreatedAtAction(nameof(GetById), new { Id_Cargo = created.Id_Cargo }, created);
         }
-        [HttpPut("{id:int}")]
+        [HttpPut ("{Id_Cargo}")]
         public async Task<IActionResult> Update(int Id_Cargo, [FromBody] CargoActualizarDTo dto)
         {
             var ok = await _service.UpdateAsync(Id_Cargo, dto);
