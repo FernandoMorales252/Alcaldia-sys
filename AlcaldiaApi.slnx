@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="AlcaldiaApi/AlcaldiaApi.csproj" />
+  <Project Path="TestAlcaldia/TestAlcaldia.csproj" Id="46f58ac3-954d-48ea-9bf0-9f3bc589c693" />
 </Solution>
