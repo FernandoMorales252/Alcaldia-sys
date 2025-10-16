@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlcaldiaApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fc29aacafe8679ada9af0a862f558ae4b5fcaa3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cec9fb4d827f8825123ca7f958818322e44d1ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlcaldiaApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlcaldiaApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
