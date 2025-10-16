@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MINED\\Desktop\\Alcaldia sys 1\\AlcaldiaApi\\AlcaldiaApi.csproj": {}
+    "C:\\Users\\Elias\\OneDrive\\Escritorio\\Portafolio\\FormaciónProfesional\\Programación\\Java & C#\\C Sharp\\Api_Alcaldia°°\\Alcaldia-sys\\AlcaldiaApi\\AlcaldiaApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MINED\\Desktop\\Alcaldia sys 1\\AlcaldiaApi\\AlcaldiaApi.csproj": {
+    "C:\\Users\\Elias\\OneDrive\\Escritorio\\Portafolio\\FormaciónProfesional\\Programación\\Java & C#\\C Sharp\\Api_Alcaldia°°\\Alcaldia-sys\\AlcaldiaApi\\AlcaldiaApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MINED\\Desktop\\Alcaldia sys 1\\AlcaldiaApi\\AlcaldiaApi.csproj",
+        "projectUniqueName": "C:\\Users\\Elias\\OneDrive\\Escritorio\\Portafolio\\FormaciónProfesional\\Programación\\Java & C#\\C Sharp\\Api_Alcaldia°°\\Alcaldia-sys\\AlcaldiaApi\\AlcaldiaApi.csproj",
         "projectName": "AlcaldiaApi",
-        "projectPath": "C:\\Users\\MINED\\Desktop\\Alcaldia sys 1\\AlcaldiaApi\\AlcaldiaApi.csproj",
-        "packagesPath": "C:\\Users\\MINED\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MINED\\Desktop\\Alcaldia sys 1\\AlcaldiaApi\\obj\\",
+        "projectPath": "C:\\Users\\Elias\\OneDrive\\Escritorio\\Portafolio\\FormaciónProfesional\\Programación\\Java & C#\\C Sharp\\Api_Alcaldia°°\\Alcaldia-sys\\AlcaldiaApi\\AlcaldiaApi.csproj",
+        "packagesPath": "C:\\Users\\Elias\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Elias\\OneDrive\\Escritorio\\Portafolio\\FormaciónProfesional\\Programación\\Java & C#\\C Sharp\\Api_Alcaldia°°\\Alcaldia-sys\\AlcaldiaApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\MINED\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Elias\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -94,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
