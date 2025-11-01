@@ -8,6 +8,8 @@ namespace AlcaldiaApi.Datos
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         // Definicion de los DbSet para las entidades 
+        public DbSet<usuario> Usuarios { get; set; }
+        public DbSet<Rol> Roles { get; set; }
         public DbSet<Cargo> Cargos { get; set; }
         public DbSet<Municipio> Municipios { get; set; }
         public DbSet<TipoDocumento> Tipos { get; set; }
@@ -24,6 +26,8 @@ namespace AlcaldiaApi.Datos
 
 
             // Configuracion de las tablas y relaciones si es necesario
+            modelBuilder.Entity<usuario>().ToTable("usuarios");
+            modelBuilder.Entity<Rol>().ToTable("roles");
             modelBuilder.Entity<Cargo>().ToTable("Cargo");
             modelBuilder.Entity<Municipio>().ToTable("Municipio");
             modelBuilder.Entity<TipoDocumento>().ToTable("TipoDocumento");
@@ -69,6 +73,24 @@ namespace AlcaldiaApi.Datos
             .HasOne(i => i.Municipio) // Un documento tiene un Municipio
             .WithMany(m => m.Quejas) // Un Municipio tiene muchos documentos
             .HasForeignKey(i => i.MunicipioId);
+
+            // Mapear PasswordHash a columna 'Password'
+            modelBuilder.Entity<usuario>()
+                .Property(u => u.PasswordHash)
+                .HasColumnName("PasswordHash");
+
+            // Índice único para Email
+            modelBuilder.Entity<usuario>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
+
+            // --- Relaciones ---
+            modelBuilder.Entity<usuario>()
+                .HasOne(u => u.Rol)
+                .WithMany(r => r.usuarios)
+                .HasForeignKey(u => u.RolId);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

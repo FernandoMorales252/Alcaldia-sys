@@ -1,0 +1,12 @@
+﻿namespace AlcaldiaApi.DTOs.UsuarioDTOs
+{
+    
+    public class UsuarioListadoDTO
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set; } = null!;
+        public string Email { get; set; } = null!;
+        public string Rol { get; set; } = null!;
+    }
+}
+
