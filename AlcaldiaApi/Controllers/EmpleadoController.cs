@@ -1,6 +1,7 @@
 ﻿using AlcaldiaApi.DtOs.DocumentoDtos;
 using AlcaldiaApi.DTOs.EmpleadoDTOs;
 using AlcaldiaApi.Interfaces;
+using AlcaldiaApi.Servicios;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AlcaldiaApi.Controllers
@@ -49,6 +50,37 @@ namespace AlcaldiaApi.Controllers
         {
             var ok = await _service.DeleteAsync(Id_empleado);
             return ok ? NoContent() : NotFound();
+        }
+
+        [HttpGet("ExportarExcel")]
+        public async Task<IActionResult> ExportarExcel()
+        {
+            try
+            {
+                // 1. Llama al servicio para generar el archivo binario
+                var fileBytes = await _service.ExportarEmpleadosAExcelAsync();
+
+                if (fileBytes == null || fileBytes.Length == 0)
+                {
+                    // Devolver 204 No Content si no hay empleados o falla la generación.
+                    return NoContent();
+                }
+
+                // 2. Definir el nombre del archivo
+                string excelName = $"Empleados_{DateTime.Now:yyyyMMddHHmmss}.xlsx";
+
+                // 3. Devolver el array de bytes como un archivo descargable
+                return File(
+                    fileContents: fileBytes,
+                    contentType: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    fileDownloadName: excelName
+                );
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores centralizado (ej: loguear la excepción)
+                return StatusCode(500, $"Error interno del servidor al exportar el archivo: {ex.Message}");
+            }
         }
     }
 }

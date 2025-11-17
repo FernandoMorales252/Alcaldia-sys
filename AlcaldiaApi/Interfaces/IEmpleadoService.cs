@@ -11,5 +11,7 @@ namespace AlcaldiaApi.Interfaces
         Task<EmpleadoRespuestaDTo> CreateAsync(EmpleadoCrearDTo dto);
         Task<bool> UpdateAsync(int Id_empleado, EmpleadoActualizarDTo dto);
         Task<bool> DeleteAsync(int Id_empleado);
+
+        Task<byte[]> ExportarEmpleadosAExcelAsync();
     }
 }

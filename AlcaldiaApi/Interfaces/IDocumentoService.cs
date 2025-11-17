@@ -10,5 +10,6 @@ namespace AlcaldiaApi.Interfaces
         Task<DocumentoARespuestaDTO> CreateAsync(DocumentoCrearDTO dto);
         Task<bool> UpdateAsync(int Id_documento, DocumentoActualizarDTO dto);
         Task<bool> DeleteAsync(int Id_documento);
+        
     }
 }

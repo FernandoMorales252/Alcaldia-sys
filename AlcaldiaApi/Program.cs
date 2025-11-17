@@ -7,10 +7,12 @@ using ComedorMariscos.Repositorios.DTOs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using OfficeOpenXml;
 using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 // Configuración EF Core
@@ -116,6 +118,7 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
+
 
 var app = builder.Build();
 
