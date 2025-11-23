@@ -1,5 +1,5 @@
 using AlcaldiaApi.Datos;
-using AlcaldiaApi.Interfaces;
+using AlcaldiaApi.Interfaces; 
 using AlcaldiaApi.Repositorios;
 using AlcaldiaApi.Servicios;
 using ComedorMariscos.Repositorios;
@@ -9,13 +9,11 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using OfficeOpenXml;
 using System.Text;
-
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
-// Add services to the container.
-// Configuración EF Core
 builder.Services.AddDbContext<AppDbContext>((serviceProvider, options) =>
 {
     var connectionString = builder.Configuration.GetConnectionString("Conn");
@@ -25,10 +23,10 @@ builder.Services.AddDbContext<AppDbContext>((serviceProvider, options) =>
 });
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Servicios DI
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IAuthService, AuthRepository>();
 
@@ -84,10 +82,7 @@ builder.Services.AddCors(options => {
         .AllowAnyMethod());
 });
 
-//builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-//builder.Services.AddEndpointsApiExplorer();
-
+// Swagger
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "AuthService API", Version = "v1" });
@@ -122,14 +117,27 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
+
+app.UsePathBase("/Alcaldia");
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/Alcaldia/swagger/v1/swagger.json", "AuthService API v1");
+    c.RoutePrefix = "swagger"; 
+});
+
+
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
 }
+// *NOTA*: Esta línea se ha COMENTADO para permitir explícitamente el tráfico HTTP
+// app.UseHttpsRedirection(); 
 
-app.UseHttpsRedirection();
 app.UseCors("AllowAllOrigins");
 app.UseAuthentication();
 app.UseAuthorization();
