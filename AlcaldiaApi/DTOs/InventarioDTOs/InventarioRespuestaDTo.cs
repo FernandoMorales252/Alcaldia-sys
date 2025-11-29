@@ -8,6 +8,7 @@ namespace AlcaldiaApi.DtOs.InventarioDTOs
         public int Cantidad { get; set; }
         public DateTime Fecha_ingreso { get; set; }
         public string Estado { get; set; }
+        public byte[]? ImagenData { get; set; }
         public int MunicipioId { get; set; }
     }
 }

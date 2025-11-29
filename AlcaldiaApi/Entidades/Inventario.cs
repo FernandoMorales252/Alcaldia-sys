@@ -25,6 +25,9 @@ namespace AlcaldiaApi.Entidades
         [Column("estado")]
         public string Estado { get; set; }
 
+        [Column("imagen_data")]
+        public byte[]? ImagenData { get; set; }
+
         [Column("id_municipio")]
         public int MunicipioId { get; set; }
         public Municipio Municipio { get; set; } = null!;

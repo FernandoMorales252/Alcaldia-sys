@@ -1,5 +1,4 @@
 ﻿using AlcaldiaApi.DtOs.InventarioDTOs;
-using AlcaldiaApi.DTOs.EmpleadoDTOs;
 
 namespace AlcaldiaApi.Interfaces
 {
