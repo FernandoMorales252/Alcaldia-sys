@@ -58,6 +58,8 @@ builder.Services.AddScoped<IAvisoService, AvisoService>();
 builder.Services.AddScoped<IQuejaRepository, QuejaRepository>();
 builder.Services.AddScoped<IQuejaService, QuejaService>();
 
+builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
+
 // JWT
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer(options =>
